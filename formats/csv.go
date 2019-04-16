@@ -50,7 +50,7 @@ func (f *CsvFormat) WriteRow(values map[string]interface{}) error {
 		case time.Time:
 			record = append(record, value.Format(time.RFC3339))
 		case bool:
-			if value == true {
+			if value {
 				record = append(record, "true")
 			} else {
 				record = append(record, "false")

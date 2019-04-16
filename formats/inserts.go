@@ -67,7 +67,7 @@ func (f *InsertsFormat) WriteRow(values map[string]interface{}) error {
 		case time.Time:
 			record = append(record, quote(value.Format(time.RFC3339)))
 		case bool:
-			if value == true {
+			if value {
 				record = append(record, "true")
 			} else {
 				record = append(record, "false")

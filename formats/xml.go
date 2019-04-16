@@ -45,7 +45,7 @@ func (e *XMLFormat) WriteRow(values map[string]interface{}) error {
 		case time.Time:
 			charData = xml.CharData(value.Format(time.RFC3339))
 		case bool:
-			if value == true {
+			if value {
 				charData = xml.CharData("true")
 			} else {
 				charData = xml.CharData("false")
